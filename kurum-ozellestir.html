@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurum Özelleştirme</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kurum Özelleştirme</h1>
+        <div class="form-container">
+            <div class="form-group">
+                <label for="kurumAdi">Kurum Adı:</label>
+                <input type="text" id="kurumAdi" placeholder="Kurum adını giriniz">
+            </div>
+            
+            <div class="form-group">
+                <label>Birinci Renk:</label>
+                <div class="color-options">
+                    <button class="color-btn" style="background-color: #1a73e8" data-color="#1a73e8"></button>
+                    <button class="color-btn" style="background-color: #ea4335" data-color="#ea4335"></button>
+                    <button class="color-btn" style="background-color: #34a853" data-color="#34a853"></button>
+                    <button class="color-btn" style="background-color: #fbbc05" data-color="#fbbc05"></button>
+                    <button class="color-btn" style="background-color: #4285f4" data-color="#4285f4"></button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>İkinci Renk:</label>
+                <div class="color-options">
+                    <button class="color-btn" style="background-color: #1a73e8" data-color="#1a73e8"></button>
+                    <button class="color-btn" style="background-color: #ea4335" data-color="#ea4335"></button>
+                    <button class="color-btn" style="background-color: #34a853" data-color="#34a853"></button>
+                    <button class="color-btn" style="background-color: #fbbc05" data-color="#fbbc05"></button>
+                    <button class="color-btn" style="background-color: #4285f4" data-color="#4285f4"></button>
+                </div>
+            </div>
+
+            <button onclick="kaydetVeUygula()" class="btn kaydet">Kaydet ve Uygula</button>
+            <button onclick="geriDon()" class="btn geri">Geri Dön</button>
+        </div>
+    </div>
+    <script src="kurum-script.js"></script>
+</body>
+</html>

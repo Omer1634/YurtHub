@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sınıf İşlemleri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container sinif-container">
+        <h1>Sınıf İşlemleri</h1>
+        
+        <!-- Sınıf Ekleme Formu -->
+        <div class="form-container">
+            <h2>Yeni Sınıf Ekle</h2>
+            <div class="form-group">
+                <label for="sinifAdi">Sınıf Adı:</label>
+                <input type="text" id="sinifAdi" placeholder="Örn: 9-A" required>
+            </div>
+            <button onclick="sinifEkle()" class="btn ekle">Sınıf Ekle</button>
+        </div>
+
+        <!-- Sınıf Listesi -->
+        <div class="sinif-listesi">
+            <h2>Sınıflar</h2>
+            <div id="siniflarTablosu"></div>
+        </div>
+
+        <!-- Öğrenci Ekleme/Aktarma Modalı -->
+        <div id="ogrenciModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalBaslik">Sınıfa Öğrenci Ekle</h2>
+                
+                <div class="ogrenci-transfer">
+                    <div class="transfer-list">
+                        <h3>Mevcut Öğrenciler</h3>
+                        <div id="mevcutOgrenciler" class="transfer-box"></div>
+                    </div>
+                    <div class="transfer-buttons">
+                        <button onclick="ogrenciEkle('→')" class="btn transfer">→</button>
+                        <button onclick="ogrenciEkle('←')" class="btn transfer">←</button>
+                    </div>
+                    <div class="transfer-list">
+                        <h3>Sınıftaki Öğrenciler</h3>
+                        <div id="sinifOgrencileri" class="transfer-box"></div>
+                    </div>
+                </div>
+                
+                <div class="modal-buttons">
+                    <button onclick="sinifKaydet()" class="btn kaydet">Kaydet</button>
+                    <button onclick="modalKapat()" class="btn iptal">İptal</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Öğrenci Transfer Modalı -->
+        <div id="transferModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Öğrenci Transfer</h2>
+                
+                <div class="form-group">
+                    <label for="kaynakSinif">Kaynak Sınıf:</label>
+                    <select id="kaynakSinif" onchange="kaynakSinifDegisti()"></select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="hedefSinif">Hedef Sınıf:</label>
+                    <select id="hedefSinif"></select>
+                </div>
+
+                <div class="transfer-container">
+                    <div class="transfer-list">
+                        <h3>Seçilen Sınıftaki Öğrenciler</h3>
+                        <div id="transferKaynakOgrenciler" class="transfer-box"></div>
+                    </div>
+                    <div class="transfer-buttons">
+                        <button onclick="ogrenciTransferEt('→')" class="btn transfer">→</button>
+                        <button onclick="ogrenciTransferEt('←')" class="btn transfer">←</button>
+                    </div>
+                    <div class="transfer-list">
+                        <h3>Transfer Edilecek Öğrenciler</h3>
+                        <div id="transferHedefOgrenciler" class="transfer-box"></div>
+                    </div>
+                </div>
+
+                <div class="modal-buttons">
+                    <button onclick="transferKaydet()" class="btn kaydet">Transfer Et</button>
+                    <button onclick="transferModalKapat()" class="btn iptal">İptal</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="butonlar">
+            <button onclick="transferModalAc()" class="btn transfer-btn">Öğrenci Transfer Et</button>
+            <button onclick="geriDon()" class="btn geri">Geri Dön</button>
+        </div>
+    </div>
+    <script src="sinif-script.js"></script>
+</body>
+</html>

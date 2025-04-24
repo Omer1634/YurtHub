@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoklama</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container yoklama-container">
+        <h1>Yoklama</h1>
+        
+        <div class="tarih-secici">
+            <label for="yoklamaTarihi">Yoklama Tarihi:</label>
+            <input type="date" id="yoklamaTarihi" required>
+        </div>
+
+        <div class="yoklama-tablosu">
+            <table id="yoklamaListesi" class="ogrenci-tablo">
+                <thead>
+                    <tr>
+                        <th>Öğrenci No</th>
+                        <th>Ad Soyad</th>
+                        <th>Sınıf</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="butonlar">
+            <button onclick="yoklamayiKaydet()" class="btn kaydet">Yoklamayı Kaydet</button>
+            <button onclick="yoklamaGecmisiniGoster()" class="btn gecmis">Yoklama Geçmişi</button>
+            <button onclick="geriDon()" class="btn geri">Geri Dön</button>
+        </div>
+
+        <!-- Yoklama Geçmişi Modal -->
+        <div id="gecmisModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Yoklama Geçmişi</h2>
+                <div id="gecmisListesi"></div>
+            </div>
+        </div>
+    </div>
+    <script src="yoklama-script.js"></script>
+</body>
+</html>

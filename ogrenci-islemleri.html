@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci İşlemleri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Öğrenci İşlemleri</h1>
+        
+        <!-- Öğrenci Ekleme Formu -->
+        <div class="form-container">
+            <h2>Yeni Öğrenci Ekle</h2>
+            <div class="form-group">
+                <label for="ogrenciAd">Öğrenci Adı ve Soyadı:</label>
+                <input type="text" id="ogrenciAd" placeholder="Örn: Ahmet Yılmaz" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="ogrenciYas">Öğrenci Yaşı:</label>
+                <input type="number" id="ogrenciYas" min="6" max="20" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="ogrenciSinif">Sınıfı:</label>
+                <select id="ogrenciSinif" required>
+                    <option value="">Sınıf Seçiniz</option>
+                    <option value="1">1. Sınıf</option>
+                    <option value="2">2. Sınıf</option>
+                    <option value="3">3. Sınıf</option>
+                    <option value="4">4. Sınıf</option>
+                    <option value="5">5. Sınıf</option>
+                    <option value="6">6. Sınıf</option>
+                    <option value="7">7. Sınıf</option>
+                    <option value="8">8. Sınıf</option>
+                    <option value="9">9. Sınıf</option>
+                    <option value="10">10. Sınıf</option>
+                    <option value="11">11. Sınıf</option>
+                    <option value="12">12. Sınıf</option>
+                </select>
+            </div>
+
+            <button onclick="ogrenciEkle()" class="btn ekle">Öğrenci Ekle</button>
+        </div>
+
+        <!-- Öğrenci Listesi -->
+        <div class="ogrenci-listesi">
+            <h2>Öğrenci Listesi</h2>
+            <div id="ogrenciTablosu"></div>
+        </div>
+
+        <button onclick="geriDon()" class="btn geri">Geri Dön</button>
+    </div>
+    <script src="ogrenci-script.js"></script>
+</body>
+</html>
